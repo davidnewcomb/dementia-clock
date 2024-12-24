@@ -22,19 +22,20 @@ function App() {
 
 	useEffect(() => {
 
-		const timer_id = setTimeout(() => {
+		const timer_id = setInterval(() => {
 			setNow(new Date())
 		}, 1000)
 
 		return () => {
 			clearTimeout(timer_id)
 		}
-	}, [now])
+
+	}, [])
 
 	return (
 		<div className="thepage">
 			<div className="big">{DAY[now.getDay()]}</div>
-			<div className="big">{clock24h}</div>
+			<div className="big_time">{clock24h}</div>
 			<div className="big">{thedate}</div>
 		</div>
 	)
